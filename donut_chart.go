@@ -125,7 +125,7 @@ func (pc DonutChart) drawSlices(r Renderer, canvasBox Box, values []Value) {
 	cx, cy := canvasBox.Center()
 	diameter := MinInt(canvasBox.Width(), canvasBox.Height())
 	radius := float64(diameter>>1) / 1.1
-	labelRadius := (radius * 2.83) / 3.0
+	labelRadius := (radius * 2) / 3.0
 
 	// draw the donut slices
 	var rads, delta, delta2, total float64
