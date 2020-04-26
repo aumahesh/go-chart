@@ -132,7 +132,8 @@ func (pc DonutChart) drawSlices(r Renderer, canvasBox Box, values []Value) {
 	var lx, ly int
 
 	if len(values) == 1 {
-		pc.styleDonutChartValue(0).WriteToRenderer(r)
+		v := values[0]
+		v.Style.InheritFrom(pc.styleDonutChartValue(index)).WriteToRenderer(r)
 		r.MoveTo(cx, cy)
 		r.Circle((radius / 1.25), cx, cy)
 		r.FillStroke()
